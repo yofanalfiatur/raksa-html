@@ -1,0 +1,1136 @@
+// @use "../../main.scss" as *;
+// body {
+//   font-family: "Urbanist";
+//   margin: 0;
+//   overflow-x: clip;
+// }
+
+@media (max-width: 768px) {
+  section {
+    overflow-x: clip;
+  }
+
+  [class*="footer"] {
+    overflow-x: clip;
+  }
+}
+
+.about-hero {
+  margin-top: 10%;
+  .about-hero-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    h1 {
+      font-size: 50px;
+      margin-bottom: -50px;
+    }
+
+    .top-hero {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      .left-hero {
+        flex-basis: 50%;
+        margin: 1%;
+        p {
+          font-size: 16px;
+        }
+        button {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px;
+          max-width: 300px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          color: #f7931e;
+          background: transparent;
+
+          &:hover {
+            opacity: 0.9;
+          }
+
+          img {
+            width: 16px;
+            height: 16px;
+            fill: #f7931e;
+          }
+        }
+      }
+
+      .right-hero {
+        flex-basis: 50%;
+        margin-right: -20px;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .bottom-hero {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+
+      .left-hero {
+        flex-basis: 50%;
+        margin-left: -20px;
+
+        img {
+          width: 100vh;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      h1 {
+        margin-top: 20%;
+        margin-bottom: 10%;
+      }
+      .top-hero {
+        flex-direction: column; /* Ubah ke kolom pada mobile */
+        align-items: center;
+
+        .left-hero {
+          order: 2;
+          p {
+            font-size: 14px;
+            margin-top: 10px;
+          }
+        }
+
+        .right-hero {
+          order: 1;
+          margin-right: -30%;
+          img {
+            width: 80%;
+            margin: 20px 0;
+          }
+        }
+      }
+
+      .bottom-hero {
+        flex-direction: column; /* Ubah ke kolom pada mobile */
+        align-items: center;
+        .right-hero {
+          order: 2;
+          p {
+            font-size: 14px;
+            margin-top: 10px;
+          }
+        }
+
+        .left-hero {
+          order: 1;
+          margin-right: -30%;
+          img {
+            width: 70%;
+            margin: 20px 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.quote-about {
+  .quote-about-container {
+    display: flex;
+    width: 100%;
+    margin-top: 10%;
+    justify-content: space-evenly;
+    margin-bottom: 10%;
+
+    .left {
+      transform: translateY(-20%);
+      img {
+        width: 100%;
+      }
+    }
+
+    .right {
+      width: 70%;
+      h3 {
+        font-size: 45px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+      .left {
+        transform: translateY(0);
+        img {
+          width: 20%;
+        }
+      }
+
+      .right {
+        width: 100%;
+        h3 {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+.slider-about {
+  .slider-about-container {
+    position: relative;
+    .tittle-mitra {
+      margin: 5%;
+      h1 {
+        font-size: 35px;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+    ul {
+      .splide__slide img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+    .splide__arrow {
+      fill: #ff9000;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      align-items: center;
+      transition: background-color 0.3s ease;
+      background: transparent;
+      border: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    .splide__arrow--prev {
+      left: -5px;
+      transform: rotate(180deg);
+    }
+
+    .splide__arrow--next {
+      right: -5px;
+    }
+
+    .splide__pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+
+      .splide__pagination__page {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 2px solid #ff8c4d;
+        background-color: transparent;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+
+        &.is-active {
+          background-color: #ff9000;
+          border-color: transparent;
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      .splide__arrow {
+        display: none;
+      }
+    }
+  }
+}
+
+.report-about {
+  margin-top: 15%;
+  .report-container {
+    background-color: #f8ede9;
+    margin: 3%;
+    padding: 200px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+
+    .top-report {
+      font-size: 30px;
+    }
+
+    .middle-report {
+      display: flex;
+      gap: 50px;
+
+      .card {
+        position: relative;
+        border-radius: 27px;
+        width: 20vw;
+        height: auto;
+        background-color: #fff;
+        box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.51) inset;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        overflow: hidden;
+
+        p,
+        h1,
+        h3 {
+          z-index: 10;
+          text-align: center;
+        }
+
+        h1 {
+          font-size: 40px;
+        }
+
+        h3 {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+
+        img {
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100px;
+          height: auto;
+          z-index: 1;
+        }
+      }
+    }
+
+    .bottom-report {
+      button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        max-width: 300px;
+        font-size: 16px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-color: #f7931e;
+        color: #fff;
+
+        &:hover {
+          opacity: 0.9;
+        }
+
+        img {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      padding: 100px;
+      .top-report,
+      .middle-report,
+      .bottom-report {
+        flex-direction: column;
+        text-align: center;
+        .card {
+          position: relative;
+          width: 80vw;
+          height: 30vh;
+
+          img {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+            height: auto;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.struktur-organisasi {
+  .struktur-organisasi-container {
+    display: flex;
+    flex-direction: column;
+
+    .jajaran-komisaris {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        margin-bottom: 20px;
+        font-size: 40px;
+      }
+
+      .komisaris-utama {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); // Mengatur grid menjadi 3 kolom
+        gap: 20px;
+
+        .card-komisaris {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 20px;
+          max-width: 400px;
+          gap: 20px;
+
+          img {
+            width: 100px;
+            height: auto;
+          }
+
+          .card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+
+            p {
+              font-size: 16px;
+              font-weight: normal;
+              margin-bottom: 5px;
+            }
+
+            h1 {
+              font-size: 16px;
+              font-size: 22px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      @media (max-width: 768px) {
+        .komisaris-utama {
+          grid-template-columns: repeat(
+            2,
+            1fr
+          ); // Hanya 2 card per row di mobile
+
+          .card-komisaris {
+            flex-direction: column; // Ubah menjadi kolom di mobile
+            align-items: center; // Tetap di tengah
+
+            img {
+              margin-bottom: 10px; // Spasi antara gambar dan konten
+            }
+
+            .card-content {
+              align-items: center; // Konten di tengah
+              text-align: left;
+              p {
+                font-size: 12px;
+              }
+              h1 {
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .jajaran-direksi {
+      h1 {
+        text-align: center;
+        font-size: 40px;
+      }
+      .direksi-utama {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 0 auto;
+        width: 90%;
+        transform: translateX(20px);
+
+        .profil-direksi-1,
+        .profil-direksi-2,
+        .profil-direksi-3,
+        .profil-direksi-4,
+        .profil-direksi-5,
+        .profil-direksi-6 {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .info-direksi {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+            .img-direksi img {
+              width: 100px;
+              height: auto;
+            }
+
+            .info-teks {
+              display: flex;
+              flex-direction: column;
+              text-align: left;
+
+              p {
+                font-size: 16px;
+                font-weight: normal;
+                margin-bottom: 5px;
+              }
+
+              h1 {
+                font-size: 14px;
+                width: 70%;
+                font-weight: bold;
+              }
+            }
+          }
+
+          .deskripsi-komisaris {
+            margin-top: 10px;
+            font-size: 16px;
+          }
+        }
+      }
+
+      @media (max-width: 768px) {
+        .direksi-utama {
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: center;
+          .deskripsi-komisaris {
+            display: none;
+          }
+          .lihat-selengkapnya {
+            display: block;
+            color: #ff9000;
+            margin-left: -40%;
+            margin-top: 10%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slider-penghargaan {
+  .tittle-penghargaan {
+    margin: 5%;
+
+    h1 {
+      font-size: 35px;
+      text-align: center;
+    }
+  }
+
+  .splide__slide {
+    box-shadow: 10px 9px 31px -25px rgba(0, 0, 0, 0.75) inset;
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 18px;
+    text-align: center;
+
+    p {
+      margin-top: 5%;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .splide__pagination {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 20px;
+
+    .splide__pagination__page {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 2px solid #ff8c4d;
+      background-color: transparent;
+      margin: 0 5px; // Space between bullets
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+
+      // Active bullet style
+      &.is-active {
+        background-color: #ff9000; // Background color for active state
+        border-color: transparent; // Remove the border for active state
+      }
+    }
+  }
+}
+
+.tata-kelola {
+  margin-top: 10%;
+
+  .tata-kelola-container {
+    text-align: center;
+
+    h1 {
+      font-size: 35px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 10%;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        margin-top: 40%;
+      }
+    }
+
+    .card {
+      padding: 20px;
+      background-color: #ef874f;
+      color: #fff;
+      text-align: center;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-sizing: border-box;
+
+      h3 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 16px;
+        flex-grow: 1;
+      }
+
+      button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        background-color: #fff;
+        color: #f7931e;
+        border-radius: 20px;
+        margin-top: auto;
+        align-self: center; // Button akan selalu di tengah
+        transition: all 0.3s ease;
+
+        &:hover {
+          opacity: 0.9;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+
+    .large-card {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      @media (max-width: 768px) {
+        order: -1; // Set card ini jadi yang pertama di mobile
+        flex-direction: column;
+        button {
+          align-self: center !important;
+        }
+      }
+
+      .left-end {
+        flex: 1;
+
+        p {
+          margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+          button {
+            text-align: center;
+          }
+        }
+      }
+
+      .right-end {
+        position: relative;
+
+        @media (max-width: 768px) {
+          order: -1;
+          margin-bottom: 20px;
+        }
+
+        img {
+          margin-left: 30%;
+          max-width: 70%;
+          margin-top: -40%;
+          transform: translateY(20%);
+
+          @media (max-width: 768px) {
+            margin: 0 auto;
+            transform: translateY(-24%);
+          }
+        }
+      }
+    }
+  }
+}
+
+.pre-footer {
+  $f: &;
+  margin-top: 200px;
+
+  #{$f}-container {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 0 20px;
+    align-items: end;
+
+    .left {
+      grid-column: 1/7;
+      grid-row: 1/2;
+      background-color: #ff8c4d;
+      display: flex;
+      flex-direction: column;
+      border-top-right-radius: 80px;
+      padding: 50px 50px 50px 50px;
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      gap: 10px;
+
+      h2 {
+        font-size: 40px;
+      }
+
+      p {
+        max-width: 450px;
+        line-height: 1.3;
+      }
+
+      h2,
+      p {
+        margin: 0;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+
+        img {
+          object-fit: contain;
+          width: 200px;
+        }
+      }
+    }
+
+    .right {
+      grid-column: 6/-1;
+      grid-row: 1/2;
+      display: flex;
+      background-color: #f7dcbb;
+      border-top-left-radius: 80px;
+      padding-left: 150px;
+      padding-right: 100px;
+      align-items: end;
+
+      img {
+        object-fit: contain;
+        margin-top: -100px;
+      }
+
+      .women {
+        margin-right: -100px;
+        max-height: 450px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .phone {
+        margin-left: -50px;
+        max-height: 450px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 100px; // Sesuaikan jarak atas pada mobile
+
+    #{$f}-container {
+      display: flex;
+      flex-direction: column-reverse; // Urutkan ulang agar tampilan sesuai desain
+      align-items: center;
+      gap: 1rem; // Tambahkan jarak antar elemen
+
+      .left {
+        width: 100%;
+        padding: 20px;
+        border-top-right-radius: 0px;
+        margin: 0 auto;
+
+        h2 {
+          font-size: 24px; // Sesuaikan ukuran font
+        }
+
+        p {
+          font-size: 14px; // Sesuaikan ukuran font paragraf
+        }
+
+        div {
+          justify-content: center; // Pusatkan tombol download
+
+          img {
+            transform: translate(-30%);
+            width: 40%;
+          }
+        }
+      }
+
+      .right {
+        position: static; // Kembalikan posisi default
+        background-color: #f7dcbb;
+        width: 100%;
+        padding: 0px;
+        border-top-left-radius: 80px;
+        display: flex;
+        justify-content: center; // Pusatkan konten dalam .right
+        transform: translateY(20px);
+
+        img {
+          max-width: 150px; // Sesuaikan ukuran gambar pada mobile
+        }
+
+        .women,
+        .phone {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  .footer-2 {
+    border-top: solid 2px #ff5a00;
+    padding: 50px 50px 30px;
+
+    .footer-2-container {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 40px 20px;
+
+      .logo {
+        width: 100%;
+        grid-column: 1/4;
+      }
+
+      .buttons {
+        grid-column: 9/-1;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 0 10px;
+
+        .konsul {
+          background-color: #ff9000;
+          border-radius: 100px;
+          padding: 16px 25px;
+          color: #fff;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 0 10px;
+
+          img {
+            width: 15px;
+            height: 15px;
+          }
+        }
+
+        .chat {
+          img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+          }
+        }
+      }
+
+      .contact {
+        grid-column: 1/4;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        span {
+          color: #ff8c4d;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        > a {
+          display: flex;
+          align-items: center;
+          gap: 0 10px;
+          color: #000;
+          text-decoration: none;
+
+          img {
+            width: 17px;
+            height: 20px;
+            object-fit: contain;
+          }
+        }
+
+        .socmed {
+          display: flex;
+          align-items: center;
+          column-gap: 10px;
+
+          a {
+            img {
+              width: 45px;
+              height: 45px;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+
+      .sitemap {
+        grid-column: 7/-1;
+        display: flex;
+        align-items: start;
+        justify-content: end;
+        gap: 0 100px;
+
+        .mobile-socmed {
+          display: none; // Hide mobile socmed on desktop
+
+          @media (max-width: 768px) {
+            display: flex; // Show mobile socmed only on mobile
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+
+            a {
+              img {
+                width: 45px;
+                height: 45px;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+
+        span {
+          color: #ff8c4d;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .menu-1 {
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            columns: 2;
+            margin-top: 25px;
+
+            li {
+              &:not(:first-child) {
+                margin-top: 15px;
+              }
+
+              a {
+                text-decoration: none;
+                color: #626262;
+              }
+            }
+          }
+        }
+
+        .menu-2 {
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 25px;
+
+            li {
+              &:not(:first-child) {
+                margin-top: 15px;
+              }
+
+              a {
+                text-decoration: none;
+                color: #626262;
+              }
+            }
+          }
+        }
+      }
+
+      hr {
+        width: 100%;
+        grid-column: span 12;
+        border-top: 1px solid #c5c5c5 !important;
+        border: none;
+      }
+
+      .copyright {
+        grid-column: 1/7;
+
+        span:first-child {
+          font-size: 15px;
+          letter-spacing: 1px;
+        }
+
+        span:last-child {
+          font-size: 12px;
+          color: #8f8f8f;
+          margin-top: 5px;
+          display: block;
+        }
+      }
+
+      .sertifikasi {
+        grid-column: 8/-1;
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 20px 0;
+        padding: 20px;
+
+        .menu-1 ul,
+        .menu-2 ul {
+          display: none;
+        }
+
+        .menu-1.active ul,
+        .menu-2.active ul {
+          display: block;
+        }
+
+        .menu-1 span::after,
+        .menu-2 span::after {
+          content: "\25BC"; // Down arrow icon
+          float: right;
+        }
+
+        .menu-1.active span::after,
+        .menu-2.active span::after {
+          content: "\25B2"; // Up arrow icon
+        }
+
+        .logo {
+          grid-column: span 12;
+          display: flex;
+          justify-content: center;
+
+          img {
+            max-width: 150px; // Atur ulang ukuran logo agar sesuai di mobile
+          }
+        }
+
+        .buttons {
+          grid-column: span 12;
+          justify-content: center;
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+
+          .konsul,
+          .chat {
+            width: 100%;
+            max-width: 250px; // Atur ulang lebar tombol di mobile
+            justify-content: center;
+          }
+        }
+
+        .contact {
+          grid-column: span 12;
+          align-items: center;
+
+          > a {
+            justify-content: center;
+          }
+
+          .socmed {
+            grid-column: 1/-1; // Ensure it spans the full width
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            display: none;
+          }
+        }
+
+        .sitemap {
+          grid-column: span 12;
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+
+          .menu-1,
+          .menu-2 {
+            ul {
+              columns: 1;
+            }
+          }
+        }
+
+        .copyright,
+        .sertifikasi {
+          grid-column: span 12;
+          text-align: center;
+
+          img {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}

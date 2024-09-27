@@ -1,0 +1,279 @@
+footer {
+  .footer-2 {
+    border-top: solid 2px #ff5a00;
+    padding: 50px 50px 30px;
+
+    .footer-2-container {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 40px 20px;
+
+      .logo {
+        width: 100%;
+        grid-column: 1/4;
+      }
+
+      .buttons {
+        grid-column: 9/-1;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 0 10px;
+
+        .konsul {
+          background-color: #ff9000;
+          border-radius: 100px;
+          padding: 16px 25px;
+          color: #fff;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 0 10px;
+
+          img {
+            width: 15px;
+            height: 15px;
+          }
+        }
+
+        .chat {
+          img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+          }
+        }
+      }
+
+      .contact {
+        grid-column: 1/4;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        span {
+          color: #ff8c4d;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        > a {
+          display: flex;
+          align-items: center;
+          gap: 0 10px;
+          color: #000;
+          text-decoration: none;
+          img {
+            width: 17px;
+            height: 20px;
+            object-fit: contain;
+          }
+        }
+
+        .socmed {
+          display: flex;
+          align-items: center;
+          column-gap: 10px;
+          a {
+            img {
+              width: 45px;
+              height: 45px;
+              object-fit: contain;
+            }
+          }
+        }
+      }
+
+      .sitemap {
+        grid-column: 7/-1;
+        display: flex;
+        align-items: start;
+        justify-content: end;
+        gap: 0 100px;
+
+        .mobile-socmed {
+          display: none; // Hide mobile socmed on desktop
+
+          @media (max-width: 768px) {
+            display: flex; // Show mobile socmed only on mobile
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+
+            a {
+              img {
+                width: 45px;
+                height: 45px;
+                object-fit: contain;
+              }
+            }
+          }
+        }
+
+        span {
+          color: #ff8c4d;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .menu-1 {
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            columns: 2;
+            margin-top: 25px;
+
+            li {
+              &:not(:first-child) {
+                margin-top: 15px;
+              }
+              a {
+                text-decoration: none;
+                color: #626262;
+              }
+            }
+          }
+        }
+
+        .menu-2 {
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 25px;
+
+            li {
+              &:not(:first-child) {
+                margin-top: 15px;
+              }
+              a {
+                text-decoration: none;
+                color: #626262;
+              }
+            }
+          }
+        }
+      }
+
+      hr {
+        width: 100%;
+        grid-column: span 12;
+        border-top: 1px solid #c5c5c5 !important;
+        border: none;
+      }
+
+      .copyright {
+        grid-column: 1/7;
+
+        span:first-child {
+          font-size: 15px;
+          letter-spacing: 1px;
+        }
+        span:last-child {
+          font-size: 12px;
+          color: #8f8f8f;
+          margin-top: 5px;
+          display: block;
+        }
+      }
+
+      .sertifikasi {
+        grid-column: 8/-1;
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 20px 0;
+        padding: 20px;
+
+        .menu-1 ul,
+        .menu-2 ul {
+          display: none;
+        }
+
+        .menu-1.active ul,
+        .menu-2.active ul {
+          display: block;
+        }
+
+        .menu-1 span::after,
+        .menu-2 span::after {
+          content: "\25BC"; // Down arrow icon
+          float: right;
+        }
+
+        .menu-1.active span::after,
+        .menu-2.active span::after {
+          content: "\25B2"; // Up arrow icon
+        }
+
+        .logo {
+          grid-column: span 12;
+          display: flex;
+          justify-content: center;
+          img {
+            max-width: 150px; // Atur ulang ukuran logo agar sesuai di mobile
+          }
+        }
+
+        .buttons {
+          grid-column: span 12;
+          justify-content: center;
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+
+          .konsul,
+          .chat {
+            width: 100%;
+            max-width: 250px; // Atur ulang lebar tombol di mobile
+            justify-content: center;
+          }
+        }
+
+        .contact {
+          grid-column: span 12;
+          align-items: center;
+
+          > a {
+            justify-content: center;
+          }
+
+          .socmed {
+            grid-column: 1/-1; // Ensure it spans the full width
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            display: none;
+          }
+        }
+
+        .sitemap {
+          grid-column: span 12;
+          flex-direction: column;
+          gap: 20px;
+          align-items: center;
+
+          .menu-1,
+          .menu-2 {
+            ul {
+              columns: 1;
+            }
+          }
+        }
+
+        .copyright,
+        .sertifikasi {
+          grid-column: span 12;
+          text-align: center;
+
+          img {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
