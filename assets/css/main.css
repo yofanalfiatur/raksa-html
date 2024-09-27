@@ -161,7 +161,6 @@ pre {
 a {
   background-color: transparent;
   text-decoration: none;
-  color: transparent;
 }
 
 abbr[title] {
@@ -3655,7 +3654,7 @@ footer .footer-2 .footer-2-container .sertifikasi {
 }
 .serv-list__card {
   background-color: var(--tertiary);
-  border-radius: calc(var(--space-s));
+  border-radius: calc(var(--space-l));
   overflow: hidden;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -3667,6 +3666,7 @@ footer .footer-2 .footer-2-container .sertifikasi {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    border-radius: calc(var(--space-m) + 1px);
   }
 }
 .serv-list__card:nth-child(odd) .serv-list__card__picture {

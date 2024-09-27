@@ -16,12 +16,13 @@
   }
   &__card {
     background-color: $tertiary;
-    border-radius: calc($space-s);
+    border-radius: calc($space-l);
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     width: 100%;
     @include device-below(md) {
       flex-direction: column;
+      border-radius: calc($space-m + 1px);
     }
     &:nth-child(odd) {
       .serv-list__card__picture {
