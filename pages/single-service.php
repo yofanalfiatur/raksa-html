@@ -2,10 +2,39 @@
 $title = "Detail Service | Raksa Online";
 include "./components/header.php"; ?>
 
+<?php
+$titleBanner = "Pelayanan Kami";
+$descBanner = "Dapatkan pelayanan istimewa dari Asuransi Raksa yang dapat memenuhi seluruh kebutuhan Anda";
+$imageBanner = "../dist/img/temp/service-banner-1.png";
+
+$ListContent = array(
+    array(
+        'textList' => 'Layanan Eksklusif',
+        'iconList' => "../dist/img/temp/list-layanan.svg"
+    ),
+    array(
+        'textList' => 'Personal Assistant',
+        'iconList' => "../dist/img/temp/list-pa.svg"
+    ),
+    array(
+        'textList' => 'Bengkel Rekanan',
+        'iconList' => "../dist/img/temp/list-bengkel.svg"
+    ),
+);
+include "./components/global/banner-global.php"; ?>
+
 <section class="sg-serv-info">
     <div class="container">
         <div class="sg-serv-info__wrapper row">
-
+            <div class="sg-serv-info__content col-12 col-lg-7">
+                <h3 class="sg-serv-info__content__title">Sekilas Mengenai Raksa Gold Club</h3>
+                <div class="sg-serv-info__content__desc">
+                    <p>Diluncurkan sejak tahun 2004, Raksa Gold Club menjadi salah satu layanan eksklusif unggulan dari PT Asuransi Raksa. Layanan ini terbatas pada Nasabah dengan nilai pertanggungan mobil minimal $80.000. Tentu eksklusifitas dari Layanan kami kedepankan khusus untuk Nasabah di Raksa Gold Club. Tidak semua Nasabah dari Asuransi Raksa dapat mengakses layanan ini. Jadikan diri Anda sebagai Nasabah Raksa Gold Club untuk bisa merasakan Layanan Eksklusif dari PT Asuransi Raksa.</p>
+                </div>
+            </div>
+            <div class="sg-serv-info__picture col-12 col-lg-5">
+                <img src="../dist/img/temp/service-card-1.jpg" alt="" class="sg-serv-info__picture__img">
+            </div>
         </div>
     </div>
 </section>

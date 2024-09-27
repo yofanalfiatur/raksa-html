@@ -23,9 +23,9 @@
     height: 100%;
     z-index: -1;
     @include device-below(md) {
-        position: relative;
-        align-self: flex-end;
-        max-width: 90vw;
+      position: relative;
+      align-self: flex-end;
+      max-width: 90vw;
     }
     img {
       width: 100%;
@@ -45,6 +45,35 @@
       }
     }
     &__desc {
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: $space-s;
+
+      @include device-below(md) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      &__item {
+        display: flex;
+        flex-direction: row;
+        gap: $space-s;
+        align-items: center;
+        background-color: $salmon;
+        padding: calc($space-xs);
+        border-radius: 100px;
+        @include device-below(md) {
+          justify-content: center;
+        }
+        &__icon {
+        }
+        &__text {
+          font-size: calc($body + 2px);
+          color: $primary;
+        }
+      }
     }
   }
 }
