@@ -29,22 +29,33 @@ include "./components/global/banner-global.php"; ?>
             <div class="sg-serv-info__content col-12 col-lg-7">
                 <h3 class="sg-serv-info__content__title">Sekilas Mengenai Raksa Gold Club</h3>
                 <div class="sg-serv-info__content__desc">
-                    <p>Diluncurkan sejak tahun 2004, Raksa Gold Club menjadi salah satu layanan eksklusif unggulan dari PT Asuransi Raksa. Layanan ini terbatas pada Nasabah dengan nilai pertanggungan mobil minimal $80.000. Tentu eksklusifitas dari Layanan kami kedepankan khusus untuk Nasabah di Raksa Gold Club. Tidak semua Nasabah dari Asuransi Raksa dapat mengakses layanan ini. Jadikan diri Anda sebagai Nasabah Raksa Gold Club untuk bisa merasakan Layanan Eksklusif dari PT Asuransi Raksa.</p>
+                    <p>Diluncurkan sejak tahun 2004, Raksa Gold Club menjadi salah satu layanan eksklusif unggulan dari PT Asuransi Raksa. Layanan ini terbatas pada Nasabah dengan nilai pertanggungan mobil minimal $80.000. Tentu eksklusifitas dari Layanan kami kedepankan khusus untuk Nasabah di Raksa Gold Club.</p><br>
+                    <p>Tidak semua Nasabah dari Asuransi Raksa dapat mengakses layanan ini. Jadikan diri Anda sebagai Nasabah Raksa Gold Club untuk bisa merasakan Layanan Eksklusif dari PT Asuransi Raksa.</p>
                 </div>
             </div>
             <div class="sg-serv-info__picture col-12 col-lg-5">
-                <img src="../dist/img/temp/service-card-1.jpg" alt="" class="sg-serv-info__picture__img">
+                <img src="../dist/img/temp/service-card-1.jpg" alt="" class="sg-serv-info__picture__img" width="530" height="300">
             </div>
         </div>
         <div class="sg-serv-info__wrapper row">
             <div class="sg-serv-info__content col-12 col-lg-7">
                 <h3 class="sg-serv-info__content__title">Sekilas Mengenai Raksa Gold Club</h3>
                 <div class="sg-serv-info__content__desc">
-                    <p>Diluncurkan sejak tahun 2004, Raksa Gold Club menjadi salah satu layanan eksklusif unggulan dari PT Asuransi Raksa. Layanan ini terbatas pada Nasabah dengan nilai pertanggungan mobil minimal $80.000. Tentu eksklusifitas dari Layanan kami kedepankan khusus untuk Nasabah di Raksa Gold Club. Tidak semua Nasabah dari Asuransi Raksa dapat mengakses layanan ini. Jadikan diri Anda sebagai Nasabah Raksa Gold Club untuk bisa merasakan Layanan Eksklusif dari PT Asuransi Raksa.</p>
+                    <span>Layanan yang sangat personal dan dikhususkan untuk Anda kami berikan di Raksa Gold Club. Berbagai layanan yang akan Anda rasakan di Raksa Gold Club:</span>
+                    <ul>
+                        <li>Ruangan yang nyaman</li>
+                        <li>Makanan dan minuman</li>
+                        <li>Personal Assistant</li>
+                        <li>Laporan perkembangan klaim</li>
+                        <li>Rekanan Bengkel Resmi</li>
+                        <li>Pelayanan Nasabah 24 Jam</li>
+                        <li>Manicure dan Pedicure</li>
+                        <li>Raksa Emergency Quick Service 24 Jam</li>
+                    </ul>
                 </div>
             </div>
             <div class="sg-serv-info__picture col-12 col-lg-5">
-                <img src="../dist/img/temp/service-card-1.jpg" alt="" class="sg-serv-info__picture__img">
+                <img src="../dist/img/temp/service-card-1.jpg" alt="" class="sg-serv-info__picture__img" width="530" height="300">
             </div>
         </div>
     </div>

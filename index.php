@@ -178,7 +178,7 @@
                     <a href="./pages/service-listing.php" target="_blank" style="color: #000000">Service List<i class="fa fa-angle-right pull-right"></i></a>
                     <a href="./pages/single-service.php" target="_blank" style="color: #000000">Service Detail<i class="fa fa-angle-right pull-right"></i></a>
                     <a href="#" target="_blank" style="color: #000000">Simulasi Perhitungan<i class="fa fa-angle-right pull-right"></i></a>
-                    <a href="#" target="_blank" style="color: #000000">Hubungi Kami<i class="fa fa-angle-right pull-right"></i></a>
+                    <a href="./pages/contact.php" target="_blank" style="color: #000000">Hubungi Kami<i class="fa fa-angle-right pull-right"></i></a>
                     <a href="./pages/thank-you.php" target="_blank" style="color: #000000">Thank You<i class="fa fa-angle-right pull-right"></i></a>
                     <a href="./pages/error-404.php" target="_blank" style="color: #000000">404<i class="fa fa-angle-right pull-right"></i></a>
                 </div>
