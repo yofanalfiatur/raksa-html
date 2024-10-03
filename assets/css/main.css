@@ -1086,6 +1086,34 @@ footer .footer-2 .footer-2-container .sertifikasi {
     font-size: calc(var(--h1));
   }
 }
+.banner-hero .banner-content__desc {
+  padding-top: calc(var(--space-s));
+  padding-bottom: calc(var(--space-s));
+}
+.banner-hero .banner-content__btn {
+  margin-top: calc(var(--space-l));
+  font-size: calc(var(--body) + 2px);
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: calc(var(--space-xs));
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.banner-hero .banner-content__btn:hover {
+  gap: calc(var(--space-m));
+}
+.banner-hero .banner-content__btn__text {
+  color: var(--primary);
+}
 .banner-hero .banner-content__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

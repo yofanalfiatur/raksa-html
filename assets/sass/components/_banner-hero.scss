@@ -45,6 +45,24 @@
       }
     }
     &__desc {
+      padding-top: calc($space-s);
+      padding-bottom: calc($space-s);
+    }
+    &__btn {
+      margin-top: calc($space-l);
+      font-size: calc($body + 2px);
+      font-weight: 700;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: calc($space-xs);
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        gap: calc($space-m);
+      }
+      &__text {
+        color: $primary;
+      }
     }
 
     &__list {

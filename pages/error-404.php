@@ -2,12 +2,17 @@
 $title = "Error 404 | Raksa Online";
 include "./components/header.php"; ?>
 
-<section class="error 404">
-    <div class="container">
-        <h1>404</h1>
-        <h2>Page Not Found</h2>
-    </div>
-</section>
+<?php
+$titleBanner = "Halaman tidak ditemukan";
+$descBanner = "Lorem ipsum dolor sit amet consectetur. Eget augue amet nibh sit tortor pellentesque volutpat.";
+$imageBanner = "../dist/img/temp/404-raksa-re.jpg";
+
+$btnBanner = array(
+    'text' => 'Kembali ke beranda',
+    'link' => './home.php'
+);
+
+include "./components/global/banner-global.php"; ?>
 
 
 <?php include "./components/footer.php"; ?>

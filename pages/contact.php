@@ -84,5 +84,13 @@ include "./components/header.php"; ?>
     </div>
 </section>
 
+<section class="ct__pre-footer">
+    <div class="container">
+        <div class="ct__pre-footer__wrapper row">
+
+        </div>
+    </div>
+</section>
+
 
 <?php include "./components/footer.php"; ?>
