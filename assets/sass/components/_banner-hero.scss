@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  justify-content: center;
-  min-height: calc($space-3xl * 5);
+  justify-content: flex-start;
+  min-height: calc($space-3xl * 5.2);
 
   padding-top: calc($space-xl);
   padding-bottom: calc($space-xl);
@@ -35,7 +35,7 @@
     }
   }
   .banner-content {
-    padding-top: calc($space-l);
+    padding-top: calc($space-s);
     padding-bottom: calc($space-l);
     &__title {
       font-size: calc($h1 + 1.1rem);
@@ -68,10 +68,12 @@
     &__list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: $space-s;
+      row-gap: calc($space-s + 0.5rem);
+      column-gap: $space-s;
 
       @include device-below(md) {
         grid-template-columns: repeat(1, 1fr);
+        display: none;
       }
 
       &__item {
@@ -80,7 +82,7 @@
         gap: $space-s;
         align-items: center;
         background-color: $salmon;
-        padding: calc($space-xs);
+        padding: calc($space-xs) calc($space-m);
         border-radius: 100px;
         @include device-below(md) {
           justify-content: center;
@@ -92,6 +94,16 @@
           color: $primary;
         }
       }
+    }
+  }
+
+  #{&}__list-md {
+    margin-top: calc($space-l);
+    @include device-above(md) {
+      display: none;
+    }
+    .banner-content__list {
+      display: grid;
     }
   }
 }

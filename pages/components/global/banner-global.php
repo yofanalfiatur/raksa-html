@@ -32,5 +32,17 @@
         <img src="<?= $imageBanner ?>" alt="banner hero" class="banner-picture__img">
     </div>
 
-
+    <!-- list mobile -->
+    <?php if (!empty($ListContent)) : ?>
+        <div class="banner-hero__list-md container">
+            <div class="banner-content__list">
+                <?php foreach ($ListContent as $item) : ?>
+                    <div class="banner-content__list__item">
+                        <img src="<?= $item['iconList'] ?>" alt="icon-service" class="banner-content__list__item__icon">
+                        <p class="banner-content__list__item__text"><?= $item['textList'] ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    <?php endif; ?>
 </section>

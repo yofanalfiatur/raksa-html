@@ -3,12 +3,15 @@
 .sg-serv-info {
   display: flex;
   padding-top: calc($space-3xl);
-  padding-bottom: calc($space-3xl);
+  padding-bottom: calc($space-m);
   overflow: hidden;
   .container {
     display: flex;
     flex-direction: column;
     gap: calc($space-l);
+    @include device-below(md) {
+      gap: calc($space-2xl);
+    }
   }
   #{&}__wrapper {
     display: flex;
@@ -26,27 +29,36 @@
         }
       }
       .sg-serv-info__picture {
+        @include device-below(md) {
+          padding-right: calc($space-xl);
+        }
         &::after {
           content: "";
           width: 100%;
           height: 100%;
           background-color: $salmon;
-          top: -4rem;
-          right: -4rem;
+          top: -6rem;
+          right: -45%;
           border-radius: 30px;
           position: absolute;
           z-index: 0;
+          @include device-below(md) {
+            top: -3.2rem;
+          }
         }
         &::before {
           content: "";
           width: calc(100% + var(--space-outside));
           height: 100%;
           background-color: $salmon;
-          top: -4rem;
+          top: -6rem;
           right: -100%;
           border-radius: 30px;
           position: absolute;
           z-index: 1;
+          @include device-below(md) {
+            top: -3.2rem;
+          }
         }
       }
     }
@@ -61,27 +73,36 @@
         }
       }
       .sg-serv-info__picture {
+        @include device-below(md) {
+          padding-left: calc($space-xl);
+        }
         &::after {
           content: "";
           width: 100%;
           height: 100%;
           background-color: $salmon;
-          top: -4rem;
-          left: -4rem;
+          top: -6rem;
+          left: -45%;
           border-radius: 30px;
           position: absolute;
           z-index: 0;
+          @include device-below(md) {
+            top: -3.2rem;
+          }
         }
         &::before {
           content: "";
           width: calc(100% + var(--space-outside));
           height: 100%;
           background-color: $salmon;
-          top: -4rem;
+          top: -6rem;
           left: -100%;
           border-radius: 30px;
           position: absolute;
           z-index: 1;
+          @include device-below(md) {
+            top: -3.2rem;
+          }
         }
       }
     }
@@ -97,14 +118,24 @@
       margin-bottom: calc($space-l);
     }
     &__title {
-      font-size: calc($h1);
+      font-size: calc($h3 + 1px);
       font-weight: 500;
       @include device-above(md) {
         width: 55%;
+        font-size: calc($h1);
       }
     }
     &__desc {
       font-size: calc($body + 2px);
+      @include device-below(md) {
+        font-size: calc($body);
+      }
+      ul {
+        padding-left: calc($space-l);
+        li {
+          margin: calc($space-xs) 0;
+        }
+      }
     }
   }
   #{&}__picture {
@@ -116,6 +147,7 @@
       position: relative;
       z-index: 2;
       max-width: 100%;
+      height: max-content;
       max-height: 100%;
       object-fit: cover;
       object-position: center;
@@ -129,16 +161,27 @@
   padding-top: calc($space-3xl);
   padding-bottom: calc($space-3xl);
   position: relative;
-  &::before {
-    content: url("../../dist/img/temp/pin-loc.svg");
+  @include device-below(md) {
+    padding-top: calc($space-s);
+    padding-bottom: calc($space-xl);
+  }
+  &__decor {
     position: absolute;
-    top: 0;
-    left: -8rem;
+    top: -3rem;
+    left: -50%;
     z-index: -1;
   }
   #{&}__intro {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: calc($space-xl);
     &__title {
       font-size: calc($h3 + 2.4px);
+      font-weight: 500;
+      margin-bottom: calc($space-m - 0.2rem);
+      @include device-below(md) {
+        font-size: calc($h3 + 2px);
+      }
     }
     &__desc {
     }
@@ -146,13 +189,14 @@
   #{&}__map {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: calc($space-s);
+    gap: calc($space-s + 0.3rem);
 
     @include device-below(md) {
       grid-template-columns: repeat(2, 1fr);
     }
     @include device-below(sm) {
       grid-template-columns: repeat(1, 1fr);
+      gap: calc($space-m);
     }
     &__card {
       background: #fff8ee;
@@ -163,12 +207,37 @@
       justify-content: space-between;
       min-height: calc($space-3xl * 2.6);
       transition: all 0.3s ease;
+      position: relative;
+      @include device-below(md) {
+        gap: calc($space-s);
+        min-height: max-content;
+        border-radius: 20px;
+      }
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: $raksa-gradient;
+        top: 0;
+        right: 0;
+        border-radius: 30px;
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+      }
 
       &__title {
         font-size: calc($h4 + 2px);
+        color: black;
+        @include device-below(md) {
+          font-size: calc($body);
+          font-weight: 500;
+        }
       }
       &__desc {
         font-size: calc($body);
+        color: black;
       }
       &__wrap {
         display: flex;
@@ -178,17 +247,21 @@
       }
       &__link {
         display: flex;
-        height: 0rem;
         // max-height: max-content;
         overflow: hidden;
         color: white;
-        transition: all 0.2s ease;
         font-weight: 500;
         display: flex;
         flex-direction: row;
         align-items: center;
         gap: calc($space-xs);
         width: max-content;
+        height: 0rem;
+        max-height: 0rem;
+        transition: all 0.2s ease;
+        @include device-below(md) {
+          display: none;
+        }
         &::after {
           content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNSAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTcuNTYzNjcgMC4xNTc2MzFDNy40NjIwNyAwLjI1ODY5MyA3LjQwNSAwLjM5NTY4OCA3LjQwNSAwLjUzODUyM0M3LjQwNSAwLjY4MTM1NyA3LjQ2MjA3IDAuODE4MzUyIDcuNTYzNjcgMC45MTk0MTRMMTMuMTQ3NiA2LjQ2NzQ5TC0xLjQ1NzQzIDYuNDY3NDlDLTEuNjAxMzMgNi40Njc0OSAtMS43MzkzMyA2LjUyNDI4IC0xLjg0MTA5IDYuNjI1MzZDLTEuOTQyODQgNi43MjY0NCAtMiA2Ljg2MzUzIC0yIDcuMDA2NDlDLTIgNy4xNDk0NCAtMS45NDI4NCA3LjI4NjUzIC0xLjg0MTA5IDcuMzg3NjFDLTEuNzM5MzMgNy40ODg3IC0xLjYwMTMzIDcuNTQ1NDggLTEuNDU3NDMgNy41NDU0OEwxMy4xNDc2IDcuNTQ1NDhMNy41NjM2NyAxMy4wOTM2QzcuNDY3ODMgMTMuMTk1NyA3LjQxNTY2IDEzLjMzMDkgNy40MTgxNCAxMy40NzA1QzcuNDIwNjIgMTMuNjEwMSA3LjQ3NzU2IDEzLjc0MzQgNy41NzY5NyAxMy44NDIxQzcuNjc2MzggMTMuOTQwOSA3LjgxMDQ5IDEzLjk5NzUgNy45NTEwNSAxMy45OTk5QzguMDkxNjEgMTQuMDAyNCA4LjIyNzY1IDEzLjk1MDUgOC4zMzA1IDEzLjg1NTNMMTQuODQxMyA3LjM4NzM4QzE0Ljk0MjkgNy4yODYzMSAxNSA3LjE0OTMyIDE1IDcuMDA2NDlDMTUgNi44NjM2NSAxNC45NDI5IDYuNzI2NjYgMTQuODQxMyA2LjYyNTU5TDguMzMwNSAwLjE1NzYzMUM4LjIyODc3IDAuMDU2Njk0IDguMDkwODcgMCA3Ljk0NzA5IDBDNy44MDMzMSAwIDcuNjY1NCAwLjA1NjY5NCA3LjU2MzY3IDAuMTU3NjMxWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==");
         }
@@ -197,8 +270,10 @@
         }
       }
       &:hover {
-        background: $raksa-gradient;
-        transition: all 0.3s ease;
+        background: transparent;
+        &::before {
+          opacity: 1;
+        }
 
         .sg-serv-loc__map__card__title,
         .sg-serv-loc__map__card__desc {
@@ -214,23 +289,41 @@
 }
 .sg-serv-ct {
   position: relative;
-  padding-top: calc($space-2xl);
+  padding-top: calc($space-xl);
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   #{&}__wrapper {
+    width: 100%;
     position: relative;
     justify-content: space-between;
     background-color: #fcecdd;
     border-radius: 30px;
     overflow: hidden;
+    @include device-below(md) {
+      flex-direction: column-reverse;
+    }
   }
   #{&}__content {
     display: flex;
     flex-direction: column;
     gap: calc($space-s);
-    padding: calc($space-l) calc($space-l) calc($space-l) calc($space-xl);
+    padding: calc($space-m) calc($space-l) calc($space-m) calc($space-2xl);
     justify-content: center;
+    @include device-below(md) {
+      padding: calc($space-l);
+      justify-content: center;
+      align-items: center;
+    }
     &__title {
       font-size: calc($h1);
       font-weight: $regular;
+      @include device-below(md) {
+        font-size: calc($h4);
+      }
     }
     &__btn {
       display: flex;
@@ -241,6 +334,9 @@
       transition: all 0.3s ease;
       width: max-content;
       position: relative;
+      @include device-below(md) {
+        width: 100%;
+      }
 
       &:hover {
         gap: calc($space-s);
@@ -253,6 +349,9 @@
         right: -2rem;
         border-radius: 200px;
         background: $btn-gradient;
+        @include device-below(md) {
+          right: 0;
+        }
       }
       &__text {
         position: relative;
@@ -263,8 +362,14 @@
         gap: calc($space-xs);
         z-index: 2;
         padding: calc($space-xs) calc($space-m) calc($space-xs) calc($space-s);
+
         background-color: $primary;
         border-radius: 200px;
+        @include device-below(md) {
+          width: 95%;
+          padding: calc($space-2xs) calc($space-m) calc($space-2xs)
+            calc($space-s);
+        }
 
         &::before {
           content: url("../../dist/img/temp/logo-wa-btn.svg");
@@ -295,6 +400,7 @@
   #{&}__picture {
     padding: unset;
     display: flex;
+    position: relative;
     &__img {
       width: 100%;
       object-fit: cover;
@@ -310,12 +416,31 @@
     height: 100%;
     object-fit: contain;
     object-position: center;
+    @include device-below(md) {
+      transform: translate(0, 0);
+      top: 0rem;
+      height: calc($space-3xl * 4.4);
+    }
+    @include device-below(sm) {
+      height: calc($space-3xl * 3);
+      right: 25%;
+    }
   }
 }
 
 .sg-serv-other {
   padding-top: calc($space-3xl);
-  padding-bottom: calc($space-3xl);
+  padding-bottom: calc($space-3xl - 2rem);
+  @include device-below(md) {
+    padding-bottom: calc($space-3xl - 1.5rem);
+  }
+  .container {
+    @include device-below(md) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
   #{&}__intro {
     display: flex;
     flex-direction: row;
@@ -330,16 +455,52 @@
       width: max-content;
       color: $primary;
       font-weight: 500;
+      display: flex;
+      flex-direction: row;
+      gap: calc($space-xs);
+      transition: all 0.3s ease;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        gap: calc($space-m);
+      }
+      @include device-below(md) {
+        display: none;
+      }
+
+      &-md {
+        margin-top: calc($space-m);
+        width: max-content;
+        color: $primary;
+        font-size: calc($body + 2px);
+        font-weight: 500;
+        display: flex;
+        flex-direction: row;
+        gap: calc($space-xs);
+        transition: all 0.3s ease;
+        align-items: center;
+        justify-content: center;
+        &:hover {
+          gap: calc($space-m);
+        }
+        @include device-above(md) {
+          display: none;
+        }
+      }
     }
   }
   #{&}__wrapper {
+    row-gap: calc($space-l);
   }
   #{&}__card {
     &__link {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: calc($space-s);
+      gap: calc($space-xs);
+      @include device-below(md) {
+        gap: calc($space-s);
+      }
     }
     &__img {
       width: 100%;
@@ -349,6 +510,15 @@
     &__title {
       font-size: calc($body + 6px);
       color: black;
+      transition: all 0.3s ease;
+      @include device-below(md) {
+        font-size: calc($body + 4px);
+      }
+    }
+    &:hover {
+      .sg-serv-other__card__title {
+        color: $primary;
+      }
     }
   }
 }
