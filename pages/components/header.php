@@ -6,64 +6,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
     <link rel="stylesheet" href="../dist/css/vendor/bootstrap/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="../dist/css/main.min.css" type="text/css">
     <link rel="stylesheet" href="../dist/css/vendor/splide/splide-core.min.css" type="text/css">
+    <link rel="stylesheet" href="../dist/css/main.min.css" type="text/css">
 </head>
 
 <body>
-
-    <header>
-        <div class="container">
-            <nav class="mega-menu">
-                <a href="../pages/home.php" class="logo">
-                    <img src="../../dist/img/logo-raksa.png" alt="logo-raksa-online">
-                </a>
-                <div class="menu-icons">
-                    <img src="../../dist/img/hamburger-icon.svg" alt="menu" class="hamburger-icon">
-                    <img src="../../dist/img/close-icon.svg" alt="close" class="close-icon">
-                </div>
-                <ul class="menu">
-                    <li><a href="../pages/about-us.php">Tentang Kami</a></li>
-                    <li class="dropdown">
-                        <a href="#">Produk <img class="arrow-down" src="../../dist/img/arrow-down.svg" alt=""></a>
-                        <div class="dropdown-content produk">
-                            <a href="#">
-                                <div class="produk-item">
-                                    <img src="../../dist/img/produk-megamenu.png" alt="Kendaraan">
-                                    <span>Kendaraan</span>
+    <header class="header">
+        <div class="header__wrapper">
+            <div class="container">
+                <nav class="header__nav navbar">
+                    <a href="/home.php" class="header__logo">
+                        <img src="../dist/img/logo-raksa-1x.png" alt="Raksa">
+                    </a>
+                    <!-- Main Menu Desktop  -->
+                    <div class="header__menu">
+                        <ul class="header__menu-list menu main-menu">
+                            <li class="menu-item">
+                                <a href="#" class="menu-link nav-link">
+                                    <span>Tentang Kami</span>
+                                </a>
+                            </li>
+                            <li class="menu-item menu-item-has-children megamenu">
+                                <a href="#" class="menu-link nav-link">
+                                    <span>Produk</span>
+                                    <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.5 0.5L4.5 4.5L8.5 0.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                                <div class="sub-mega-menu">
+                                    <div class="container">
+                                        <ul class="sub-mega-menu-list">
+                                            <li class="sub-mega-menu-item">
+                                                <a href="#" class="sub-mega-menu-link nav-link">
+                                                    <img class="sub-mega-menu-img" src="../dist/img/temp/prod-mm-1.jpg" alt="">
+                                                    <div class="sub-mega-menu-text">
+                                                        <img src="../dist/img/temp/mm-1.png" alt="">
+                                                        <span>Bangunan</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="sub-mega-menu-item">
+                                                <a href="#" class="sub-mega-menu-link nav-link">
+                                                    <img class="sub-mega-menu-img" src="../dist/img/temp/prod-mm-2.jpg" alt="">
+                                                    <div class="sub-mega-menu-text">
+                                                        <img src="../dist/img/temp/mm-2.png" alt="">
+                                                        <span>Bangunan</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="sub-mega-menu-item">
+                                                <a href="#" class="sub-mega-menu-link nav-link">
+                                                    <img class="sub-mega-menu-img" src="../dist/img/temp/prod-mm-3.jpg" alt="">
+                                                    <div class="sub-mega-menu-text">
+                                                        <img src="../dist/img/temp/mm-3.png" alt="">
+                                                        <span>Lainnya</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </a>
-                            <a href="#">
-                                <div class="produk-item">
-                                    <img src="../../dist/img/produk-megamenu-bangunan.png" alt="Bangunan">
-                                    <span>Bangunan</span>
-                                </div>
-                            </a>
-                            <a href="#">
-                                <div class="produk-item">
-                                    <img src="../../dist/img/produk-megamenu-lainnya.png" alt="Lainnya">
-                                    <span>Lainnya</span>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#">Pelayanan <img class="arrow-down" src="../../dist/img/arrow-down.svg" alt=""></a>
-                        <div class="dropdown-content pelayanan">
-                            <a href="#">Raksa Gold Club</a>
-                            <a href="#">Raksa Silver Club</a>
-                            <a href="#">Raksa Mobile Club</a>
-                            <a href="#">Hotline 24 Jam</a>
-                            <a href="#">Derek 24 Jam</a>
-                            <a href="#">Raksa Emergency Services</a>
-                        </div>
-                    </li>
-                    <li><a href="#">Promosi</a></li>
-                    <li><a href="#">Klaim</a></li>
-                    <li><a href=""><button class="hubungi-kami">Hubungi Kami</button></a></li>
-                </ul>
-            </nav>
+                            </li>
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#" class="menu-link nav-link">
+                                    <span>Pelayanan</span>
+                                    <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.5 0.5L4.5 4.5L8.5 0.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                                <ul class="sub-menu-list">
+                                    <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Raksa Gold Club 2</a></li>
+                                    <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Raksa Gold Club</a></li>
+                                    <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Raksa Gold Club 3</a></li>
+                                    <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Raksa Gold Club 4</a></li>
+                                    <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Raksa Gold Club 5</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link nav-link">
+                                    <span>Promosi</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" class="menu-link nav-link">
+                                    <span>Klaim</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="/contact.php" class="header__btn-contact">
+                            Hubungi Kami
+                        </a>
+                    </div>
+                    <!-- Button Menu Mobile  -->
+                    <div class="header__btn-md">
+                        <button class="burger-btn" type="button" value="menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </nav>
+            </div>
         </div>
     </header>
-
     <main>

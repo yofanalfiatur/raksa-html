@@ -1,249 +1,273 @@
-// style navbar
-.mega-menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
-  padding: 10px 20px;
-  backdrop-filter: blur(10px);
-  z-index: 999;
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-sizing: border-box;
+@use "../utils/" as *;
 
-  img {
-    width: 150px;
+.header {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 1s cubic-bezier(0.2, 1, 0.3, 1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0px 4px 10.1px 0px rgba(80, 80, 80, 0.2509803922);
+  backdrop-filter: blur(10px);
+
+  #{&}__wrapper {
+    display: flex;
+    align-items: center;
+  }
+  #{&}__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #{&}__menu {
+    display: flex;
+    flex-direction: row;
+    column-gap: $space-l;
+    align-items: center;
   }
 
-  ul {
+  .main-menu {
     display: flex;
-    list-style: none;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
     margin: 0;
-    padding: 0;
-
-    li {
+    padding: unset;
+    column-gap: calc($space-l);
+    list-style: none;
+    @include device-below(md) {
+      display: none;
+    }
+    .menu-item {
       position: relative;
-
-      a {
-        text-decoration: none;
-        color: #000;
-        font-size: 16px;
-        padding: 10px 15px;
-        display: block;
-        white-space: nowrap;
-
+      .menu-link {
+        font-size: calc($body);
+        color: black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: calc($space-2xs);
+        transition: all 0.3s ease;
+        letter-spacing: 2px;
+        position: relative;
+        padding: calc($space-m + 4px) 0;
         &:hover {
-          color: #ff9000;
-        }
-      }
-
-      .arrow-down {
-        max-width: 15px;
-        margin-left: 10px;
-      }
-
-      // Dropdown default untuk produk (horizontal grid)
-      .dropdown-content {
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        z-index: 1;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-        padding: 20px;
-
-        // Dropdown produk
-        &.produk {
-          width: 1200px;
-          margin-top: 10px;
-          transform: translateX(-650px);
-          display: flex;
-          gap: 20px;
-
-          .produk-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            img {
-              width: 350px;
-              height: auto;
-              object-fit: cover;
-            }
-
-            span {
-              margin-top: 10px;
-              font-size: 14px;
-              color: #333;
+          color: $primary;
+          svg {
+            path {
+              stroke: $primary;
+              transition: all 0.3s ease;
             }
           }
         }
-
-        // Dropdown Pelayanan
-        &.pelayanan {
-          display: block;
-          width: 250px;
-          padding: 0;
-          transform: translateX(-40px);
+      }
+      &-has-children {
+        position: relative;
+        .sub-menu-list {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          list-style: none;
+          padding: unset;
+          background-color: white;
+          padding: calc($space-xs) calc($space-l) calc($space-s);
+          border-radius: 0 0 30px 30px;
+          box-shadow: 0px 4px 10.1px 0px rgba(80, 80, 80, 0.2509803922);
           display: flex;
           flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          border-bottom-right-radius: 20px;
-          border-bottom-left-radius: 20px;
-          font-size: 16px;
-
-          a {
-            padding: 5px;
-            display: block;
-            margin: 10px 0;
+          row-gap: calc($space-2xs);
+          transform: translateY(-5%);
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+          .sub-menu-item {
+            display: flex;
+            flex-direction: column;
+            .sub-menu-link {
+              color: black;
+              width: max-content;
+              max-width: 16.5rem;
+              transition: all 0.3s ease;
+              font-size: calc($body);
+              padding: calc($space-3xs) 0;
+              &:hover {
+                color: $primary;
+              }
+            }
+          }
+        }
+        &:hover {
+          .sub-menu-list {
+            transform: translateY(0%);
+            opacity: 1;
+            visibility: visible;
           }
         }
       }
 
-      &:hover .dropdown-content {
-        opacity: 1;
-        visibility: visible;
+      &-has-children.megamenu {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        .sub-mega-menu {
+          display: flex;
+          flex-direction: column;
+          position: fixed;
+          top: 100%;
+          left: 50%;
+          width: max-content;
+          transform: translate(-50%, 0%);
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+
+          .container {
+            display: flex;
+            flex-direction: column;
+            height: max-content;
+          }
+          .sub-mega-menu-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: calc($space-s);
+            width: 100%;
+            list-style: none;
+            padding: 0 0 calc($space-m) 0;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0px 4px 10.1px 0px rgba(80, 80, 80, 0.2509803922);
+            background-color: white;
+
+            .sub-mega-menu-item {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              .sub-mega-menu-link {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: calc($space-s);
+
+                img.sub-mega-menu-img {
+                  width: 100%;
+                  max-width: 100%;
+                }
+                .sub-mega-menu-text {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: center;
+                  gap: calc($space-s);
+                  img {
+                    width: max-content;
+                  }
+                  span {
+                    font-size: calc($body + 6px);
+                    letter-spacing: 1px;
+                    color: black;
+                    transition: all 0.3s ease;
+                  }
+                }
+                &:hover {
+                  .sub-mega-menu-img {
+                    box-shadow: 0px 4px 10.1px 0px
+                      rgba(80, 80, 80, 0.2509803922);
+                  }
+                  .sub-mega-menu-text {
+                    span {
+                      color: $primary;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &:hover {
+          .sub-mega-menu {
+            transform: translate(-50%, 0%);
+            opacity: 1;
+            visibility: visible;
+          }
+        }
       }
     }
+  }
 
-    .hubungi-kami {
-      background-color: #ff9000;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
+  #{&}__btn-contact {
+    display: flex;
+    flex-direction: column;
+    padding: calc($space-2xs + 2px) calc($space-m);
+    border-radius: 100px;
+    background-color: $primary;
+    color: white;
+    font-size: calc($body - 2px);
+    letter-spacing: 2px;
+    font-weight: 600;
+    @include device-below(md) {
+      display: none;
+    }
+  }
+
+  #{&}__btn-md {
+    display: none;
+    @include device-below(md) {
+      display: block;
+    }
+    .burger-btn {
+      border: 0;
+      padding: 0;
+      background-color: transparent;
+      position: relative;
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      border-radius: 30px;
       cursor: pointer;
-      border-radius: 20px;
+
+      span {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        transition: all 0.3s ease;
+        opacity: 1;
+
+        &:nth-of-type(1) {
+          top: 6px;
+        }
+        &:nth-of-type(2) {
+          top: 12px;
+        }
+        &:nth-of-type(3) {
+          top: 18px;
+        }
+      }
 
       &:hover {
-        background-color: #e55d00;
-      }
-    }
-  }
-
-  .hamburger-icon,
-  .close-icon {
-    width: 30px;
-    cursor: pointer;
-  }
-
-  @media (max-width: 768px) {
-    .menu-icons {
-      display: block; // Tampilkan icon hamburger pada mobile
-    }
-
-    .menu {
-      display: none; // Sembunyikan menu di mobile mode
-      position: fixed;
-      top: 60px;
-      right: 0;
-      left: 30px;
-      background-color: rgb(251, 232, 208);
-      background-image: url("../../dist/img/nav-bg.png");
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: bottom right;
-      // background: linear-gradient(0deg, #FF9000 0%, #FF5A00 100%);
-      width: auto;
-      flex-direction: column;
-      padding: 20px;
-      gap: 20px;
-      height: 100svh;
-
-      li {
-        width: 50%;
-        text-align: left;
-
-        .dropdown-content {
-          position: relative;
-          top: 0;
-          left: 0;
-          width: 5%;
-          transform: none;
-          padding: 10px;
-          z-index: 999;
-          transform: translateX(0) !important;
-          visibility: visible;
-          opacity: 1;
-          background-color: transparent;
-          box-shadow: none;
-          align-items: start !important;
-          gap: 15px !important;
-          padding: 0 !important;
-          padding-left: 30px !important;
-          margin-top: 15px !important;
-          display: none !important;
-          &.expand {
-            display: flex !important;
+        span {
+          &:nth-of-type(1),
+          &:nth-of-type(3) {
+            top: 12px;
+            background-color: black;
           }
-
-          &.produk {
-            flex-direction: column;
-            width: 100%;
+          &:nth-of-type(1) {
+            transform: rotate(45deg);
           }
-
-          &.pelayanan {
-            width: 100%;
+          &:nth-of-type(2) {
+            opacity: 0;
           }
-
-          a {
-            visibility: visible;
-            padding: 0 !important;
-            margin: 0 !important;
-
-            img {
-              display: none;
-            }
-
-            span {
-              margin: 0 !important;
-              font-size: 16px !important;
-            }
+          &:nth-of-type(3) {
+            transform: rotate(-45deg);
           }
         }
-
-        a {
-          padding: 0 !important;
-          font-size: 18px;
-        }
       }
-    }
 
-    .hamburger-icon {
-      display: block;
-    }
-
-    .close-icon {
-      display: none;
-    }
-
-    .menu.active {
-      display: flex;
-    }
-
-    .close-icon.active {
-      display: block;
-    }
-
-    .hamburger-icon.active {
-      display: none;
-    }
-  }
-
-  // Sembunyikan icon hamburger dan close pada desktop
-  @media (min-width: 769px) {
-    .hamburger-icon,
-    .close-icon {
-      display: none;
+      &:focus {
+        outline: 0;
+      }
     }
   }
 }

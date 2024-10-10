@@ -1,3 +1,5 @@
+@use "../utils/" as *;
+
 .pre-footer {
   $f: &;
   margin-top: 200px;
