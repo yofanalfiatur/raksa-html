@@ -142,5 +142,5 @@ include "./components/header.php"; ?>
     </div>
 </section>
 
-
+<?php include "./components/global/pre-footer.php"; ?>
 <?php include "./components/footer.php"; ?>

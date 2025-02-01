@@ -134,7 +134,78 @@
 </footer>
 
 </body>
-<script src="../dist/javascript/vendor/splide/splide.min.js"></script>
-<script src="../dist/javascript/main.min.js"></script>
+<script defer type="text/javascript" src="../dist/javascript/vendor/splide/splide.min.js"></script>
+<script defer type="text/javascript" src="../dist/javascript/main.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const burgerMenu = document.querySelectorAll(".burger-btn");
+        const menuMobile = document.querySelector("#header__menu-md");
+        const body = document.querySelector("body");
+        const header = document.querySelector("header");
+
+
+        burgerMenu.forEach(function(button) {
+            button.addEventListener("click", function(event) {
+                event.preventDefault();
+                this.classList.toggle("active-menu");
+
+                if (this.classList.contains("active-menu")) {
+                    menuMobile.classList.add("show-md");
+                    body.style.overflow = "hidden";
+                } else {
+                    menuMobile.classList.remove("show-md");
+                    body.style.overflow = "inherit";
+                }
+            });
+        });
+
+        if (header) {
+            const svgIcons = document.querySelectorAll('.menu-item-has-children .menu-div .svg-menu');
+
+            svgIcons.forEach(function(svg) {
+                svg.addEventListener("click", function(event) {
+                    event.preventDefault();
+
+                    const parentMenuItem = this.closest('.menu-item-has-children');
+
+                    const allSubMenus = document.querySelectorAll('.menu-item-has-children.show-sub-md');
+                    allSubMenus.forEach(function(menu) {
+                        if (menu !== parentMenuItem) {
+                            menu.classList.remove('show-sub-md');
+                        }
+                    });
+
+                    parentMenuItem.classList.toggle('show-sub-md');
+                });
+            });
+        }
+
+        if (header) {
+            var lastScrollTop = 0;
+
+            window.addEventListener("scroll", function() {
+                var scrollPosition = window.scrollY || window.pageYOffset;
+
+                // Tambahkan kelas 'header__scrolled' saat scroll lebih dari 50px
+                if (scrollPosition > 50) {
+                    header.classList.add("header__scrolled");
+                } else {
+                    header.classList.remove("header__scrolled");
+                }
+
+                // Tambahkan kelas 'header__scroll-down' saat scroll ke bawah lebih dari 100px
+                if (scrollPosition > 100 && scrollPosition > lastScrollTop) {
+                    header.classList.add("header__scroll-down");
+                } else {
+                    header.classList.remove("header__scroll-down");
+                }
+
+                lastScrollTop = scrollPosition;
+            });
+        }
+
+
+    });
+</script>
 
 </html>

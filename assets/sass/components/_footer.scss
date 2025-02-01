@@ -27,6 +27,7 @@
       @include device-below(md) {
         justify-content: space-between;
         align-items: center;
+        margin-bottom: calc($space-m);
       }
       &__lg-link {
         display: flex;
@@ -76,6 +77,8 @@
         @include device-below(md) {
           margin-right: calc($space-m);
           overflow: visible;
+          width: 100%;
+          justify-content: space-between;
         }
         &::after {
           position: absolute;
@@ -95,6 +98,10 @@
           font-size: calc($body + 4px);
           letter-spacing: 2px;
           font-weight: 500;
+          @include device-below(md) {
+            font-size: calc($body);
+            line-height: 1.3;
+          }
         }
       }
 
@@ -124,6 +131,9 @@
       align-items: center;
       max-width: max-content;
       margin-bottom: calc($space-s + 5px);
+      @include device-below(md) {
+        margin-bottom: calc($space-s);
+      }
       span {
         color: black;
         font-size: calc($body);
@@ -145,6 +155,9 @@
       margin-top: calc($space-s);
       @include device-below(lg) {
         column-gap: calc($space-xl);
+      }
+      @include device-below(md) {
+        display: none;
       }
       &__item {
         width: calc($space-xl - 1px);
@@ -179,6 +192,11 @@
       @include device-below(lg) {
         gap: calc($space-xl);
       }
+      @include device-below(md) {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: calc($space-m);
+      }
     }
     &__text {
       color: #ff8c4d;
@@ -187,6 +205,9 @@
       font-weight: 600;
       margin-bottom: calc($space-2xs);
       text-transform: uppercase;
+      @include device-below(md) {
+        font-size: calc($body);
+      }
     }
 
     &__sitemap,
@@ -215,7 +236,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       @include device-below(md) {
-        grid-template-columns: repeat(1, 1fr);
+        gap: calc($space-xs) calc($space-xs);
       }
       &__item {
       }
@@ -225,12 +246,20 @@
     &__wrap-prod {
     }
     &__prod {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      @include device-below(md) {
+        gap: calc($space-xs) calc($space-xs);
+      }
     }
 
     // sosmed mobile
     &__socmed-md {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
+      margin-top: calc($space-l + 5px);
+
       @include device-above(md) {
         display: none;
       }
@@ -278,10 +307,15 @@
       @include device-below(md) {
         justify-content: center;
         align-items: center;
+        margin-top: calc($space-s);
       }
       &__text {
         color: #8f8f8f;
         font-size: calc($body - 4px);
+        @include device-below(md) {
+          font-size: calc($body - 2px);
+          text-align: center;
+        }
       }
     }
   }

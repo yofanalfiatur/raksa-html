@@ -174,7 +174,7 @@
                     <a href="./pages/promo-listing.php" target="_blank" style="color: #000000">Promo List<i class="fa fa-angle-right pull-right"></i></a>
                     <a href="./pages/single-promo.php" target="_blank" style="color: #000000">Promo Detail<i class="fa fa-angle-right pull-right"></i></a>
                     <a href="#" target="_blank" style="color: #000000">Product List<i class="fa fa-angle-right pull-right"></i></a>
-                    <a href="#" target="_blank" style="color: #000000">Product Detail<i class="fa fa-angle-right pull-right"></i></a>
+                    <a href="./pages/single-product.php" target="_blank" style="color: #000000">Product Detail<i class="fa fa-angle-right pull-right"></i></a>
                     <a href="./pages/service-listing.php" target="_blank" style="color: #000000">Service List<i class="fa fa-angle-right pull-right"></i></a>
                     <a href="./pages/single-service.php" target="_blank" style="color: #000000">Service Detail<i class="fa fa-angle-right pull-right"></i></a>
                     <a href="#" target="_blank" style="color: #000000">Simulasi Perhitungan<i class="fa fa-angle-right pull-right"></i></a>

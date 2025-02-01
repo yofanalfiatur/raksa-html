@@ -1,0 +1,9 @@
+@use "../../utils/" as *;
+
+.sg-promo {
+    margin-top: calc($space-3xl * 3);
+    &__banner {
+        display: flex;
+        flex-direction: row;
+    }
+}

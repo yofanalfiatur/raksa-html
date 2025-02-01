@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $title; ?></title>
-    <link rel="stylesheet" href="../dist/css/vendor/bootstrap/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="../dist/css/vendor/splide/splide-core.min.css" type="text/css">
+    <link rel="stylesheet" href="../dist/css/vendor/bootstrap/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="../dist/css/main.min.css" type="text/css">
 </head>
 
@@ -107,6 +107,69 @@
                     </div>
                 </nav>
             </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="header__menu-md" class="header__menu-md">
+            <div class="container">
+                <ul class="header__menu-md__list main-menu-md">
+                    <li class="menu-item">
+                        <div class="menu-div">
+                            <a href="#" class="menu-link nav-link">
+                                Tentang Kami
+                            </a>
+                        </div>
+                    </li>
+                    <li class="menu-item menu-item-has-children">
+                        <div class="menu-div">
+                            <a href="#Produk" class="menu-link nav-link">Produk</a>
+                            <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-menu">
+                                <path d="M0.5 0.5L4.5 4.5L8.5 0.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <ul class="sub-menu-list">
+                            <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Service 1</a></li>
+                            <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Service 2</a></li>
+                            <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Service 3</a></li>
+                            <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Service 4</a></li>
+                            <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Service 5</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item menu-item-has-children">
+                        <div class="menu-div">
+                            <a href="#" class="menu-link nav-link"> Pelayanan</a>
+                            <svg width="9" height="5" viewBox="0 0 9 5" fill="none" xmlns="http://www.w3.org/2000/svg" class="svg-menu">
+                                <path d="M0.5 0.5L4.5 4.5L8.5 0.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <ul class="sub-menu-list">
+                            <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Raksa Gold Club 2</a></li>
+                            <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Raksa Gold Club</a></li>
+                            <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Raksa Gold Club 3</a></li>
+                            <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Raksa Gold Club 4</a></li>
+                            <li class="sub-menu-item"><a href="#" class="sub-menu-link nav-link">Raksa Gold Club 5</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item">
+                        <div class="menu-div">
+                            <a href="#" class="menu-link nav-link">Promosi</a>
+                        </div>
+                    </li>
+                    <li class="menu-item">
+                        <div class="menu-div">
+                            <a href="#" class="menu-link nav-link">Klaim</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+                <a href="/contact.php" class="contact-btn-md">
+                    Hubungi Kami
+                </a>
+            </div>
+
+            <img src="../dist/img/temp/raksa-menu-bg-md.png" alt="background menu" class="header__menu-md__bg">
+
         </div>
     </header>
     <main>
